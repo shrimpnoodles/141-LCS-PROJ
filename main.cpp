@@ -1,8 +1,5 @@
 #include <iostream>
-#include <cfloat>
-#include <cmath>
-#include <cstdlib>
-#include <cstring>
+#include <string>
 
 using namespace std;
 
@@ -10,7 +7,7 @@ int max(int a, int b){
     return (a>b) ? a : b;
 }
 
-char* lcs(char* x, char* y, int a, int b){
+string lcs(char* x, char* y, int a, int b){
     int temp[a+1][b+1];
 
     for (int i=0; i<=a; i++){
@@ -44,8 +41,10 @@ char* lcs(char* x, char* y, int a, int b){
             j--;
         }
     }
-  //  cout << lcs;
-    return lcs;
+   // cout << lcs;
+    string answer(lcs);
+   // cout << answer;
+    return answer;
 }
 
 string longestCommonSubseq(string x, string y){
@@ -59,9 +58,10 @@ string longestCommonSubseq(string x, string y){
          y1[i] = y[i];
     }
 
-    string final(lcs(x1, y1, sizeof(x1), sizeof(y1)));
+    lcs(x1, y1, sizeof(x1), sizeof(y1));
+    //string final(lcs(x1, y1, sizeof(x1), sizeof(y1)));
 
-    return final;
+    return lcs(x1, y1, sizeof(x1), sizeof(y1));;
 }
 
 
